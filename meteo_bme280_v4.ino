@@ -221,16 +221,17 @@ void loop() {
 
   delay(5000);
   
-  //Afisare sageti up&down functie de presiunea atmosferica
-		if (pa /100<=969)  // 978.46 hPa este presiunea normala altitudinea de 320m
+//Afisare picaturi de ploaie la presiunea atmosferica scazuta
+  if (pa /100<=969)  // 978.46 hPa este presiunea normala altitudinea de 320m
 		{
 			lcd.setCursor(18,2);
 			lcd.write(byte(2));
 			lcd.setCursor(19,2);
 			lcd.write(byte(3));
 		}
-	
-  else if (pa /100>=972.46)
+
+//Afisare soare la presiunea atmosferica ridicata
+  else if (pa /100>=978.46)   
    {
       lcd.setCursor(18,2);
       lcd.write(byte(4));
@@ -238,7 +239,8 @@ void loop() {
       lcd.write(byte(5));
   }
 
-   else // (pa /100>969 || <972.48)
+//Afisare nor la presiunea atmosferica intre 969-978.46 hPa
+   else // (pa /100>969 || <978.46)
    {
       lcd.setCursor(18,2);
       lcd.write(byte(6));
