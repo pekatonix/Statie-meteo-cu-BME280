@@ -1,8 +1,8 @@
 /*!
  * Creat de Peter Gyorfi
  * Statie meteo cu senzor BME280 si DS18B20  pentru temperatura exterioara
- * Varianta 3
- * Targu Mures, 3/13/2019
+ * Varianta 4
+ * Targu Mures, 3/21/2019
  * @copyright GNU General Public License
  */
 
