@@ -93,25 +93,25 @@ byte soare_dr[8] = {   //Simbol soare dreapta
 }; 
 
 byte nor_st[8] = {   //Simbol nor stanga
-  B00000,
-  B00000,
-  B00111,
-  B01111,
-  B11111,
-  B01111,
-  B00001,
-  B00000
+  	B00000,
+  	B00000,
+  	B00111,
+  	B01111,
+ 	B11111,
+  	B01111,
+  	B00001,
+  	B00000
 };
 
 byte nor_dr[8] = {   //Simbol nor dreapta
-  B00000,
-  B00000,
-  B11100,
-  B11110,
-  B11111,
-  B11110,
-  B10000,
-  B00000
+  	B00000,
+  	B00000,
+  	B11100,
+  	B11110,
+  	B11111,
+  	B11110,
+  	B10000,
+  	B00000
 };
 
 void setup() {
@@ -133,8 +133,8 @@ void setup() {
 	lcd.createChar(3, pic_jos); // Creare simbol picatura jos
 	lcd.createChar(4, soare_st); // Creare simbol soare_st
 	lcd.createChar(5, soare_dr); // Creare simbol soare_dr
-  lcd.createChar(6, nor_st); // Creare simbol nor_st
-  lcd.createChar(7, nor_dr); // Creare simbol nor_dr
+  	lcd.createChar(6, nor_st); // Creare simbol nor_st
+  	lcd.createChar(7, nor_dr); // Creare simbol nor_dr
 	
 	//Printare mesaj logo pe LCD
     lcd.setCursor(5, 0);
@@ -174,12 +174,12 @@ void loop() {
 	Serial.print(pa /100);
 	Serial.println(" hPa");
   // Afisare presiune atmosferica, in hPa, pe LCD
-		lcd.setCursor(0, 2);
-		lcd.print("Pres: ");
-		lcd.setCursor(13, 2);
-		lcd.print("hPa");
-		lcd.setCursor(6, 2);
-		lcd.print(pa /100);
+	lcd.setCursor(0, 2);
+	lcd.print("Pres: ");
+	lcd.setCursor(13, 2);
+	lcd.print("hPa");
+	lcd.setCursor(6, 2);
+	lcd.print(pa /100);
 	
   //Afisare umiditate pe monitor
 	Serial.print("Hum:");
@@ -201,13 +201,13 @@ void loop() {
   //Afisare temperatura exterioara pe LCD 
         senzor.requestTemperatures(); //cerem temperaturile de la ds18b20
         tempext = senzor.getTempCByIndex(0);  //temperatura exterioara cu DS18B20
-		    lcd.setCursor(0, 1);                 
-		    lcd.print("Temp ext: ");	
+	lcd.setCursor(0, 1);                 
+	lcd.print("Temp ext: ");	
         lcd.setCursor(16, 1);
         lcd.write(byte(0));
         lcd.print("C"); 
         lcd.setCursor(10, 1);
-		    lcd.print(tempext);   
+	lcd.print(tempext);   
     
  /*
   //Afisare altitudine pe LCD
@@ -223,29 +223,29 @@ void loop() {
   
 //Afisare picaturi de ploaie la presiunea atmosferica scazuta
   if (pa /100<=969)  // 978.46 hPa este presiunea normala altitudinea de 320m
-		{
-			lcd.setCursor(18,2);
-			lcd.write(byte(2));
-			lcd.setCursor(19,2);
-			lcd.write(byte(3));
-		}
+   {
+	lcd.setCursor(18,2);
+	lcd.write(byte(2));
+	lcd.setCursor(19,2);
+	lcd.write(byte(3));
+   }
 
 //Afisare soare la presiunea atmosferica ridicata
   else if (pa /100>=978.46)   
    {
-      lcd.setCursor(18,2);
-      lcd.write(byte(4));
-      lcd.setCursor(19,2);
-      lcd.write(byte(5));
+      	lcd.setCursor(18,2);
+      	lcd.write(byte(4));
+      	lcd.setCursor(19,2);
+      	lcd.write(byte(5));
   }
 
 //Afisare nor la presiunea atmosferica intre 969-978.46 hPa
    else // (pa /100>969 || <978.46)
    {
-      lcd.setCursor(18,2);
-      lcd.write(byte(6));
-      lcd.setCursor(19,2);
-      lcd.write(byte(7));
+      	lcd.setCursor(18,2);
+      	lcd.write(byte(6));
+      	lcd.setCursor(19,2);
+      	lcd.write(byte(7));
   } 
 }
 	
