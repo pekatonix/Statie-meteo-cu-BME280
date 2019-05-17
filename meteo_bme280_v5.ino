@@ -53,7 +53,7 @@
 #include "RTClib.h" // from https://github.com/adafruit/RTClib
 #include <Encoder.h> // from http://www.pjrc.com/teensy/td_libs_Encoder.html
 #include <TimeLord.h> // from http://swfltek.com/arduino/timelord.html. When adding it to your IDE, rename the file, removing the "-depreciated" 
-// http://www.timeanddate.com/sun/romania/craiova - for control sun time
+// http://www.timeanddate.com/sun/romania/targu mures - for control sun time
 BlueDot_BME280 bme280 = BlueDot_BME280();
 RTC_DS1307 RTC; // Tells the RTC library that we're using a DS1307 RTC
 Encoder knob(2, 3); //encoder connected to pins 2 and 3 (and ground)
